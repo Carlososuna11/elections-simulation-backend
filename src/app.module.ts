@@ -6,6 +6,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { CommonModule, AllExceptionsFilter } from './common';
 import { configuration } from './config';
 import { BaseModule } from './base';
+import { StudentsModule } from './student';
 import { REQUEST } from '@nestjs/core';
 import { Request } from 'express';
 
@@ -27,6 +28,7 @@ import { Request } from 'express';
 		// Service Modules
 		CommonModule,
 		BaseModule,
+		StudentsModule,
 		// Global
 		// Module Router
 		// https://docs.nestjs.com/recipes/router-module

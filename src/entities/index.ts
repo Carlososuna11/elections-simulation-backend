@@ -1,1 +1,1 @@
-export * from './elector';
+export * from './student';

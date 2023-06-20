@@ -36,6 +36,7 @@
 		"start:dev": "nest start --watch",
 		"start:debug": "nest start --debug --watch",
 		"start:prod": "node dist/main",
+		"generate:students": "ts-node bin/generateFakeStudents",
 		"start:repl": "nest start --entryFile repl",
 		"lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
 		"test": "jest",
@@ -46,6 +47,7 @@
 		"doc": "compodoc -p tsconfig.json -s -d docs"
 	},
 	"dependencies": {
+		"@faker-js/faker": "^8.0.2",
 		"@nestjs/axios": "^2.0.0",
 		"@nestjs/common": "^9.0.0",
 		"@nestjs/config": "^2.3.2",
@@ -58,7 +60,6 @@
 		"class-validator": "^0.14.0",
 		"commander": "^10.0.1",
 		"compression": "^1.7.4",
-		"faker": "^5.5.3",
 		"helmet": "^7.0.0",
 		"nestjs-paginate": "^8.1.4",
 		"reflect-metadata": "^0.1.13",

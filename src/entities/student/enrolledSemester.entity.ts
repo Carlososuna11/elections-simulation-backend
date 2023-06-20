@@ -9,10 +9,10 @@ export default class EnrolledSemester {
 	semesterCode: string;
 
 	@ApiProperty({
-		description: 'All subjects approved?',
-		type: Boolean,
+		description: 'The number of failed subjects',
+		type: Number,
 	})
-	allSubjectsApproved: boolean;
+	failedSubjects: number;
 
 	@ApiProperty({
 		description: 'The number of enrolled UC',

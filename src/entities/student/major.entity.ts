@@ -44,4 +44,16 @@ export default class Major {
 		type: [EnrolledSemester],
 	})
 	enrolledSemesters: EnrolledSemester[];
+
+	@ApiProperty({
+		description: 'Number of years of the student',
+		type: Number,
+	})
+	years: number;
+
+	@ApiProperty({
+		description: 'Has repeated Semester?',
+		type: Boolean,
+	})
+	hasRepeatedSemester: boolean;
 }
