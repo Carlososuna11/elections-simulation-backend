@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import EnrolledSemester from './enrolledSemester.entity';
-
+import { Type } from 'class-transformer';
 export default class Major {
 	@ApiProperty({
 		description: 'The id of the major',
@@ -10,15 +10,23 @@ export default class Major {
 	majorCode: string;
 
 	@ApiProperty({
+		description: 'The code of the faculty',
+		type: String,
+	})
+	facultyCode: string;
+
+	@ApiProperty({
 		description: 'The Start Date of the major',
 		type: Date,
 	})
+	@Type(() => Date)
 	startDate: Date;
 
 	@ApiProperty({
 		description: 'The End Date of the major',
 		type: Date,
 	})
+	@Type(() => Date)
 	endDate: Date;
 
 	@ApiProperty({
@@ -29,9 +37,9 @@ export default class Major {
 
 	@ApiProperty({
 		description: 'Current Semester based on the Approved UC',
-		type: String,
+		type: Number,
 	})
-	currentSemester: string;
+	currentSemester: number;
 
 	@ApiProperty({
 		description: 'UC that the current semester should have',
@@ -44,6 +52,12 @@ export default class Major {
 		type: [EnrolledSemester],
 	})
 	enrolledSemesters: EnrolledSemester[];
+
+	@ApiProperty({
+		description: 'The actual enrolled semester',
+		type: EnrolledSemester,
+	})
+	currentEnrolledSemester: EnrolledSemester;
 
 	@ApiProperty({
 		description: 'Number of years of the student',

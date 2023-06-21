@@ -1,12 +1,13 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { Type } from 'class-transformer';
 
 export default class EnrolledSemester {
 	@ApiProperty({
 		description: 'The id of the enrolled semester',
-		type: String,
+		type: Number,
 		uniqueItems: true,
 	})
-	semesterCode: string;
+	semesterCode: number;
 
 	@ApiProperty({
 		description: 'The number of failed subjects',
@@ -25,4 +26,18 @@ export default class EnrolledSemester {
 		type: Boolean,
 	})
 	currentSemester: boolean;
+
+	@ApiProperty({
+		description: 'The start date of the semester',
+		type: Date,
+	})
+	@Type(() => Date)
+	startDate: Date;
+
+	@ApiProperty({
+		description: 'The end date of the semester',
+		type: Date,
+	})
+	@Type(() => Date)
+	endDate: Date;
 }
