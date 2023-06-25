@@ -32,7 +32,14 @@ export class DataService {
 
 		const results = await Promise.all(
 			data.map(async (student) => {
-				const extra = (await engine.evaluate(student)).context.extra as object;
+				const result = await engine.evaluate(student);
+				const firedRules = result.fired.map((rule) => {
+					return {
+						name: rule.name,
+						description: engine.rules.find((r) => r.name === rule.name).description,
+					};
+				});
+				const extra = result.context.extra as object;
 				const defaultExtra = {
 					voteCU: false,
 					voteDIDES: false,
@@ -40,7 +47,7 @@ export class DataService {
 					voteFaculty: '',
 				};
 				const studentInfo = student as object;
-				return { ...studentInfo, ...defaultExtra, ...extra } as ElectorDto;
+				return { ...studentInfo, ...defaultExtra, ...extra, firedRules } as ElectorDto;
 			})
 		);
 
@@ -70,7 +77,14 @@ export class DataService {
 		});
 		const results = await Promise.all(
 			data.map(async (student) => {
-				const extra = (await engine.evaluate(student)).context.extra as object;
+				const result = await engine.evaluate(student);
+				const firedRules = result.fired.map((rule) => {
+					return {
+						name: rule.name,
+						description: engine.rules.find((r) => r.name === rule.name).description,
+					};
+				});
+				const extra = result.context.extra as object;
 				const studentInfo = student as object;
 				const defaultExtra = {
 					candidateCU: false,
@@ -78,7 +92,7 @@ export class DataService {
 					candidateSchool: '',
 					candidateFaculty: '',
 				};
-				return { ...studentInfo, ...defaultExtra, ...extra } as PostulantDto;
+				return { ...studentInfo, ...defaultExtra, ...extra, firedRules } as PostulantDto;
 			})
 		);
 

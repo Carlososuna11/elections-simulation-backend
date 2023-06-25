@@ -2,6 +2,7 @@ import Student from '@entities/student/student.entity';
 import Sanction from '@entities/student/sanction.entity';
 import Major from '@entities/student/major.entity';
 import { ApiProperty } from '@nestjs/swagger';
+import { FiredRuleDto } from './firedRule.dto';
 
 export class PostulantDto extends Student {
 	@ApiProperty({
@@ -39,4 +40,10 @@ export class PostulantDto extends Student {
 		type: Sanction || undefined,
 	})
 	lastSanction?: Sanction;
+
+	@ApiProperty({
+		description: 'Fired Rules',
+		type: [FiredRuleDto],
+	})
+	firedRules?: FiredRuleDto[];
 }

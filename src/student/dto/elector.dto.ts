@@ -2,6 +2,7 @@ import Student from '@entities/student/student.entity';
 import EnrolledSemester from '@entities/student/enrolledSemester.entity';
 import Major from '@entities/student/major.entity';
 import { ApiProperty } from '@nestjs/swagger';
+import { FiredRuleDto } from './firedRule.dto';
 
 export class ElectorDto extends Student {
 	@ApiProperty({
@@ -39,4 +40,10 @@ export class ElectorDto extends Student {
 		type: EnrolledSemester || undefined,
 	})
 	currentEnrolledSemester?: EnrolledSemester;
+
+	@ApiProperty({
+		description: 'Fired Rules',
+		type: [FiredRuleDto],
+	})
+	firedRules?: FiredRuleDto[];
 }
