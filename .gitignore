@@ -36,7 +36,6 @@ lerna-debug.log*
 
 # Environment variables
 .env
-docs
 
 public/**
 !public/static/.gitkeep

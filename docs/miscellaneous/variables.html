@@ -1,0 +1,779 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>business-rules-backend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">business-rules-backend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Variables</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#ApiPaginatedResponse" title="src/common/utils/pagination/decorators.ts" ><b>ApiPaginatedResponse</b>&nbsp;&nbsp;&nbsp;(src/.../decorators.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#config" title="src/config/envs/default.ts" ><b>config</b>&nbsp;&nbsp;&nbsp;(src/.../default.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#config" title="src/config/envs/development.ts" ><b>config</b>&nbsp;&nbsp;&nbsp;(src/.../development.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#config" title="src/config/envs/production.ts" ><b>config</b>&nbsp;&nbsp;&nbsp;(src/.../production.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#config" title="src/config/envs/test.ts" ><b>config</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#configuration" title="src/config/configuration.ts" ><b>configuration</b>&nbsp;&nbsp;&nbsp;(src/.../configuration.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#currentSemesterUC" title="bin/generateFakeStudents.ts" ><b>currentSemesterUC</b>&nbsp;&nbsp;&nbsp;(bin/.../generateFakeStudents.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#exportContext" title="src/common/utils/context/index.ts" ><b>exportContext</b>&nbsp;&nbsp;&nbsp;(src/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#importContext" title="src/common/utils/context/index.ts" ><b>importContext</b>&nbsp;&nbsp;&nbsp;(src/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ingressStatus" title="bin/generateFakeStudents.ts" ><b>ingressStatus</b>&nbsp;&nbsp;&nbsp;(bin/.../generateFakeStudents.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#major" title="bin/generateFakeStudents.ts" ><b>major</b>&nbsp;&nbsp;&nbsp;(bin/.../generateFakeStudents.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#program" title="bin/generateFakeStudents.ts" ><b>program</b>&nbsp;&nbsp;&nbsp;(bin/.../generateFakeStudents.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#semester" title="bin/generateFakeStudents.ts" ><b>semester</b>&nbsp;&nbsp;&nbsp;(bin/.../generateFakeStudents.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#services" title="src/common/common.module.ts" ><b>services</b>&nbsp;&nbsp;&nbsp;(src/.../common.module.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#URLS" title="src/common/constants/urls.ts" ><b>URLS</b>&nbsp;&nbsp;&nbsp;(src/.../urls.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#util" title="src/config/configuration.ts" ><b>util</b>&nbsp;&nbsp;&nbsp;(src/.../configuration.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/common/utils/pagination/decorators.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ApiPaginatedResponse"></a>
+                    <span class="name">
+                        <span ><b>ApiPaginatedResponse</b></span>
+                        <a href="#ApiPaginatedResponse"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&lt;TModel extends Type&lt;any&gt;&gt;(model: TModel) &#x3D;&gt; {
+	return applyDecorators(
+		ApiOkResponse({
+			schema: {
+				properties: {
+					data: {
+						type: &#x27;array&#x27;,
+						items: { $ref: getSchemaPath(model) },
+					},
+					meta: {
+						type: &#x27;object&#x27;,
+						properties: {
+							itemsPerPage: {
+								type: &#x27;number&#x27;,
+							},
+							totalItems: {
+								type: &#x27;number&#x27;,
+							},
+							currentPage: {
+								type: &#x27;number&#x27;,
+							},
+							totalPages: {
+								type: &#x27;number&#x27;,
+							},
+							sortBy: {
+								type: &#x27;array&#x27;,
+								items: {
+									type: &#x27;array&#x27;,
+									items: {
+										type: &#x27;string&#x27;,
+									},
+								},
+							},
+							searchBy: {
+								type: &#x27;array&#x27;,
+								items: {
+									type: &#x27;object&#x27;,
+								},
+							},
+							search: {
+								type: &#x27;string&#x27;,
+							},
+							select: {
+								type: &#x27;array&#x27;,
+								items: {
+									type: &#x27;string&#x27;,
+								},
+							},
+							filter: {
+								type: &#x27;object&#x27;,
+								properties: {},
+							},
+						},
+					},
+					links: {
+						type: &#x27;object&#x27;,
+						properties: {
+							first: {
+								type: &#x27;string&#x27;,
+							},
+							previous: {
+								type: &#x27;string&#x27;,
+							},
+							current: {
+								type: &#x27;string&#x27;,
+							},
+							next: {
+								type: &#x27;string&#x27;,
+							},
+							last: {
+								type: &#x27;string&#x27;,
+							},
+						},
+					},
+				},
+			},
+		})
+	);
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/config/envs/default.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="config"></a>
+                    <span class="name">
+                        <span ><b>config</b></span>
+                        <a href="#config"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+	backendHost: &#x27;http://localhost:3000&#x27;,
+	hello: &#x27;world&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/config/envs/development.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="config"></a>
+                    <span class="name">
+                        <span ><b>config</b></span>
+                        <a href="#config"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+	backendHost: process.env.BACKEND_HOST || &#x27;http://localhost:3000&#x27;,
+	foo: &#x27;dev-bar&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/config/envs/production.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="config"></a>
+                    <span class="name">
+                        <span ><b>config</b></span>
+                        <a href="#config"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+	backendHost: process.env.BACKEND_HOST || &#x27;http://localhost:3000&#x27;,
+	foo: &#x27;dev-bar&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/config/envs/test.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="config"></a>
+                    <span class="name">
+                        <span ><b>config</b></span>
+                        <a href="#config"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+	backendHost: process.env.BACKEND_HOST || &#x27;http://localhost:3000&#x27;,
+	foo: &#x27;dev-bar&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/config/configuration.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="configuration"></a>
+                    <span class="name">
+                        <span ><b>configuration</b></span>
+                        <a href="#configuration"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>async (): Promise&lt;Config&gt; &#x3D;&gt; {
+	const { config } &#x3D; &lt;{ config: Default }&gt;await import(&#x60;${__dirname}/envs/default&#x60;);
+	const { config: environment } &#x3D; &lt;{ config: Production }&gt;(
+		await import(&#x60;${__dirname}/envs/${process.env.NODE_ENV || &#x27;development&#x27;}&#x60;)
+	);
+
+	// object deep merge
+	return util.merge(config, environment);
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="util"></a>
+                    <span class="name">
+                        <span ><b>util</b></span>
+                        <a href="#util"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+	isObject&lt;T&gt;(value: T): value is T &amp; Objectype {
+		return value !&#x3D;&#x3D; null &amp;&amp; typeof value &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp; !Array.isArray(value);
+	},
+	merge&lt;T extends Objectype, U extends Objectype&gt;(target: T, source: U): T &amp; U {
+		for (const key of Object.keys(source)) {
+			const targetValue &#x3D; target[key];
+			const sourceValue &#x3D; source[key];
+			if (this.isObject(targetValue) &amp;&amp; this.isObject(sourceValue)) {
+				Object.assign(sourceValue, this.merge(targetValue, sourceValue));
+			}
+		}
+
+		return { ...target, ...source };
+	},
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>bin/generateFakeStudents.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentSemesterUC"></a>
+                    <span class="name">
+                        <span ><b>currentSemesterUC</b></span>
+                        <a href="#currentSemesterUC"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+	{ semester: 1, value: 0, years: 0 },
+	{ semester: 2, value: 25, years: 1 },
+	{ semester: 3, value: 50, years: 1 },
+	{ semester: 4, value: 77, years: 2 },
+	{ semester: 5, value: 109, years: 2 },
+	{ semester: 6, value: 170, years: 3 },
+	{ semester: 7, value: 204, years: 3 },
+	{ semester: 8, value: 229, years: 4 },
+	{ semester: 9, value: 259, years: 4 },
+	{ semester: 9, value: 297, years: 5 },
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ingressStatus"></a>
+                    <span class="name">
+                        <span ><b>ingressStatus</b></span>
+                        <a href="#ingressStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+	{ name: &#x27;Retiro Retroactivo&#x27;, value: &#x27;DR&#x27; },
+	{ name: &#x27;Retiro Total&#x27;, value: &#x27;DT&#x27; },
+	{ name: &#x27;Inscripción Regular&#x27;, value: &#x27;IR&#x27; },
+	{ name: &#x27;Inscripción Extemporánea&#x27;, value: &#x27;IE&#x27; },
+	{ name: &#x27;Inscripción Tardía&#x27;, value: &#x27;IT&#x27; },
+	{ name: &#x27;Modificación de Inscripción&#x27;, value: &#x27;MI&#x27; },
+	{ name: &#x27;Tesis de Grado&#x27;, value: &#x27;TG&#x27; },
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="major"></a>
+                    <span class="name">
+                        <span ><b>major</b></span>
+                        <a href="#major"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+	{ name: &#x27;Ingeniería Informática&#x27;, value: &#x27;IINF&#x27;, facultyCode: &#x27;FING&#x27;, years: 5 },
+	{ name: &#x27;Ingeniería Civil&#x27;, value: &#x27;ICIV&#x27;, facultyCode: &#x27;FING&#x27;, years: 5 },
+	{ name: &#x27;Ingeniería Industrial&#x27;, value: &#x27;IIND&#x27;, facultyCode: &#x27;FING&#x27;, years: 5 },
+	{ name: &#x27;Ingeniería Telecomunicaciones&#x27;, value: &#x27;ITEL&#x27;, facultyCode: &#x27;FING&#x27;, years: 5 },
+	{ name: &#x27;Arquitectura&#x27;, value: &#x27;ARQ&#x27;, facultyCode: &#x27;FING&#x27;, years: 5 },
+	{ name: &#x27;Filosofía&#x27;, value: &#x27;FIL&#x27;, facultyCode: &#x27;FAHD&#x27;, years: 4 },
+	{ name: &#x27;Psicología&#x27;, value: &#x27;PSI&#x27;, facultyCode: &#x27;FAHD&#x27;, years: 5 },
+	{ name: &#x27;Letras&#x27;, value: &#x27;LET&#x27;, facultyCode: &#x27;FAHD&#x27;, years: 4 },
+	{ name: &#x27;Comunicación Social&#x27;, value: &#x27;COM&#x27;, facultyCode: &#x27;FAHD&#x27;, years: 5 },
+	{ name: &#x27;Educación&#x27;, value: &#x27;EDU&#x27;, facultyCode: &#x27;FAHD&#x27;, years: 4 },
+	{ name: &#x27;Administración de Empresas&#x27;, value: &#x27;ADE&#x27;, facultyCode: &#x27;FACES&#x27;, years: 5 },
+	{ name: &#x27;Contaduría Pública&#x27;, value: &#x27;CON&#x27;, facultyCode: &#x27;FACES&#x27;, years: 5 },
+	{ name: &#x27;Relaciones Industriales&#x27;, value: &#x27;RIN&#x27;, facultyCode: &#x27;FACES&#x27;, years: 4 },
+	{ name: &#x27;Sociología&#x27;, value: &#x27;SOC&#x27;, facultyCode: &#x27;FACES&#x27;, years: 4 },
+	{ name: &#x27;Economía&#x27;, value: &#x27;ECO&#x27;, facultyCode: &#x27;FACES&#x27;, years: 4 },
+	{ name: &#x27;Derecho&#x27;, value: &#x27;DER&#x27;, facultyCode: &#x27;FDER&#x27;, years: 5 },
+	{ name: &#x27;Teología&#x27;, value: &#x27;TEO&#x27;, facultyCode: &#x27;FTEO&#x27;, years: 5 },
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="program"></a>
+                    <span class="name">
+                        <span ><b>program</b></span>
+                        <a href="#program"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Command()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="semester"></a>
+                    <span class="name">
+                        <span ><b>semester</b></span>
+                        <a href="#semester"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+	{ name: &#x27;Primer Semestre&#x27;, value: 1 },
+	{ name: &#x27;Segundo Semestre&#x27;, value: 2 },
+	{ name: &#x27;Tercer Semestre&#x27;, value: 3 },
+	{ name: &#x27;Cuarto Semestre&#x27;, value: 4 },
+	{ name: &#x27;Quinto Semestre&#x27;, value: 5 },
+	{ name: &#x27;Sexto Semestre&#x27;, value: 6 },
+	{ name: &#x27;Séptimo Semestre&#x27;, value: 7 },
+	{ name: &#x27;Octavo Semestre&#x27;, value: 8 },
+	{ name: &#x27;Noveno Semestre&#x27;, value: 9 },
+	{ name: &#x27;Décimo Semestre&#x27;, value: 10 },
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/common/utils/context/index.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="exportContext"></a>
+                    <span class="name">
+                        <span ><b>exportContext</b></span>
+                        <a href="#exportContext"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>async (context: object, path: string, name: string) &#x3D;&gt; {
+	const fileName &#x3D; &#x60;${path}/${name}.json&#x60;;
+
+	try {
+		const file &#x3D; await fs.open(fileName, &#x27;w&#x27;);
+		await file.writeFile(JSON.stringify(context));
+		await file.close();
+	} catch (err) {
+		throw new Error(err);
+	}
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="importContext"></a>
+                    <span class="name">
+                        <span ><b>importContext</b></span>
+                        <a href="#importContext"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>async (path: string, name: string) &#x3D;&gt; {
+	const fileName &#x3D; &#x60;${path}/${name}.json&#x60;;
+
+	try {
+		const file &#x3D; await fs.open(fileName, &#x27;r&#x27;);
+		const data &#x3D; await file.readFile(&#x27;utf-8&#x27;);
+		await file.close();
+		return data;
+	} catch (err) {
+		throw new Error(err);
+	}
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/common/common.module.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="services"></a>
+                    <span class="name">
+                        <span ><b>services</b></span>
+                        <a href="#services"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Object.values(providers)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/common/constants/urls.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="URLS"></a>
+                    <span class="name">
+                        <span ><b>URLS</b></span>
+                        <a href="#URLS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+	STUDENTS: {
+		base: &#x27;api/students&#x27;,
+		electors: &#x27;api/students/electors&#x27;,
+		postulants: &#x27;api/students/postulants&#x27;,
+		uploadEngineElectors: &#x27;api/students/electors/upload-engine&#x27;,
+		uploadEnginePostulants: &#x27;api/students/postulants/upload-engine&#x27;,
+	},
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
