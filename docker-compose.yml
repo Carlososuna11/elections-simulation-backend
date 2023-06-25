@@ -1,0 +1,15 @@
+version: "3"
+services:
+  nestjs-api:
+    build:
+      context: .
+      target: install-dependencies
+    command: npm run start:dev
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./src:/user/src/app/src
+      - ./public:/user/src/app/public
+      - ./bin:/user/src/app/bin
+    env_file:
+      - .env

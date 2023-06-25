@@ -42,7 +42,3 @@ public/**
 public/projects/**
 public/contexts/**
 databases.json
-
-.dockerignore
-docker-compose.yml
-Dockerfile
